@@ -1,0 +1,8 @@
+
+-- ./sdl-error-annex.apk
+pragma source_file_name(SDL.Error.Annex, spec_file_name => "sdl-error-annex.ads");
+pragma source_file_name(SDL.Error.Annex, body_file_name => "sdl-error-annex.adb");
+
+-- ./sdl-video-annex.apk
+pragma source_file_name(SDL.Video.Annex, spec_file_name => "sdl-video-annex.ads");
+pragma source_file_name(SDL.Video.Annex, body_file_name => "sdl-video-annex.adb");
