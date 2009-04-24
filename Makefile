@@ -84,12 +84,16 @@ mk-adatype
 	./mk-adatype > conf-adatype.tmp && mv conf-adatype.tmp conf-adatype
 
 conf-cctype:\
-conf-cc conf-cc mk-cctype
+conf-cc mk-cctype
 	./mk-cctype > conf-cctype.tmp && mv conf-cctype.tmp conf-cctype
 
 conf-ldtype:\
 conf-ld mk-ldtype
 	./mk-ldtype > conf-ldtype.tmp && mv conf-ldtype.tmp conf-ldtype
+
+conf-sosuffix:\
+mk-sosuffix
+	./mk-sosuffix > conf-sosuffix.tmp && mv conf-sosuffix.tmp conf-sosuffix
 
 conf-systype:\
 mk-systype
@@ -224,6 +228,9 @@ conf-ld conf-systype conf-cctype
 mk-mk-ctxt:\
 conf-cc conf-ld
 
+mk-sosuffix:\
+conf-systype
+
 mk-systype:\
 conf-cc conf-ld
 
@@ -264,7 +271,7 @@ obj_clean:
 	sdl-ada-annex-conf.o sdl-ada-annex.a sdl-error-annex.ali sdl-error-annex.o \
 	sdl-video-annex.ali sdl-video-annex.o
 ext_clean:
-	rm -f conf-adatype conf-cctype conf-ldtype conf-systype mk-ctxt
+	rm -f conf-adatype conf-cctype conf-ldtype conf-sosuffix conf-systype mk-ctxt
 
 regen:\
 ada-srcmap ada-srcmap-all
